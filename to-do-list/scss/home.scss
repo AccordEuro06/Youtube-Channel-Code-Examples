@@ -5,9 +5,8 @@
 }
 
 .to-do-list {
-  margin-top: 10rem;
-
-  ul {
+  ul.list {
+    margin-top: 10rem;
     list-style: none;
   }
 
@@ -22,5 +21,15 @@
     transition: 0.2s all ease-in-out;
     width: 100px;
     height: 50px;
+  }
+}
+
+ul.completed-list {
+  list-style: none;
+
+  li {
+    color: #bbb;
+    font-style: italic;
+    text-decoration: line-through;
   }
 }
