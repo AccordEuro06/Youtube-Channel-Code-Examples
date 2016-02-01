@@ -1,0 +1,1 @@
+!function(){$(document).ready(function(){var n={init:function(){this.cacheDom(),this.bindEvents()},cacheDom:function(){this.$button=$("#add-item-submit")},bindEvents:function(){console.log("bind"),this.$button.on("click",this.addNewToDo)},addNewToDo:function(){var n=$("#add-item-input").val()}};n.init()})}();

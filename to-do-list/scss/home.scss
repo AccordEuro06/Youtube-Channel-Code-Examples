@@ -1,0 +1,26 @@
+// Home Styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.to-do-list {
+  margin-top: 10rem;
+
+  ul {
+    list-style: none;
+  }
+
+  input#complete-check {
+    margin-right: 1rem;
+  }
+
+  button {
+    background: #00aaff;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s all ease-in-out;
+    width: 100px;
+    height: 50px;
+  }
+}
