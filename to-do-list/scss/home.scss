@@ -14,7 +14,17 @@
     margin-right: 1rem;
   }
 
-  button {
+  button.delete {
+    color: #777;
+    float: right;
+    transition: 0.1s all ease;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  button#add-item-submit {
     background: #00aaff;
     color: white;
     border-radius: 10px;

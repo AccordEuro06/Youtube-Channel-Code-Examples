@@ -12,16 +12,19 @@
       },
 
       cacheDom: function() {
+        this.$container = $('.to-do-list');
         this.$button = $('#add-item-submit');
         this.$list = $('.list');
         this.$input = $('#add-item-input');
         this.$completedList = $('.completed-list');
+        this.$deleteButton = this.$container.find('.delete');
       },
 
       bindEvents: function() {
         console.log('bind');
         this.$button.on('click', this.addNewToDo.bind(this));
         this.$list.on('change', 'input[type="checkbox"]', this.completeTask);
+        this.$deleteButton.on('click', this.deleteTask);
       },
 
       addNewToDo: function() {
@@ -36,6 +39,10 @@
         console.log(completedValue);
 
         $('.completed-list').prepend('<li>'+ completedValue +'</li>');
+      },
+
+      deleteTask: function() {
+        $(this).parent().remove();
       }
 
     };
