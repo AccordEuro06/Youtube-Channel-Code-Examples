@@ -44,3 +44,10 @@ ul.completed-list {
     text-decoration: line-through;
   }
 }
+
+ul#friendsList {
+  list-style: none;
+  li {
+    color: #777;
+  }
+}

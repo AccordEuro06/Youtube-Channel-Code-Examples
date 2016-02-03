@@ -30,7 +30,7 @@
 
       addNewToDo: function() {
           var newToDo = this.$input.val();
-          this.$list.prepend('<li><input id="complete-check" type="checkbox">' + newToDo + '<i class="fa fa-times delete"></i></li>');
+          this.$list.append('<li><input id="complete-check" type="checkbox">' + newToDo + '<i class="fa fa-times delete"></i></li>');
           this.$input.val('');
       },
 
@@ -43,14 +43,58 @@
       },
 
       deleteTask: function() {
-        console.log('delete');
         $(this).parent().remove();
+        console.log('delete');
+
       }
 
     };
 
     toDoList.init();
 
-  });
+
+    var $friendsList = $('#friendsList');
+
+    var $name = $('#name');
+    var $age = $('#age');
+
+    // Get friends
+    $.ajax({
+      type: 'GET',
+      url: 'http://rest.learncode.academy/api/garrett/friends',
+      success: function(friends) {
+        $.each(friends, function(i, friend) {
+          $friendsList.append('<li>'+ 'Name:' +  ' ' + friend.name + ' ' + 'Age: ' + friend.age + '</li>');
+        });
+      }
+    });
+
+    // Store friends info on click
+    $('.add-friend-button').on('click', function() {
+      console.log('add friend');
+      var friend = {
+        name: $name.val(),
+        age: $age.val()
+      };
+
+      // Post friend information
+      $.ajax({
+        type: "POST",
+        url: 'http://rest.learncode.academy/api/garrett/friends',
+        data: friend,
+        sucess: function(newFriend) {
+          if(newFriend.success == true){
+            $friendsList.append('<li>' + 'Name: ' + ' ' + newFriend.name + 'Age: ' + ' ' + newFriend.age + '</li>');
+          }
+        }
+      });
+
+    });
+
+
+
+
+
+  }); // end document ready
 
 })();
