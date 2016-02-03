@@ -4,25 +4,26 @@
     <meta charset="utf-8">
     <title>The To Do List</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="js/app.js"></script>
   </head>
   <body>
       <div class="row to-do-list">
-        <div class="small-4 small-centered">
+        <div class="small-8 small-centered">
           <h1>Awesome List</h1>
           <ul class="list">
-            <li><input id="complete-check" type="checkbox" value="true">Get work done<button class="delete">Delete</button></li>
-            <li><input id="complete-check" type="checkbox">This is almost there<button class="delete">Delete</button></li>
-            <li><input id="complete-check" type="checkbox">need this done<button class="delete">Delete</button></li>
-            <li><input id="complete-check" type="checkbox">wow<button class="delete">Delete</button></li>
+            <li><input id="complete-check" type="checkbox" value="true">Get work done<i class="fa fa-times delete"></i></li>
+            <li><input id="complete-check" type="checkbox">This is almost there<i class="fa fa-times delete"></i></li>
+            <li><input id="complete-check" type="checkbox">need this done<i class="fa fa-times delete"></i></li>
+            <li><input id="complete-check" type="checkbox">wow<i class="fa fa-times delete"></i></li>
           </ul>
 
          <hr>
 
          <ul class="completed-list">
-           <li>This is done<button class="delete">Delete</button></li>
+           <li>This is done<i class="fa fa-times delete"></i></li>
          </ul>
 
           <div class="add-list-item">

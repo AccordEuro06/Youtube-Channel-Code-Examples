@@ -18,6 +18,7 @@
         this.$input = $('#add-item-input');
         this.$completedList = $('.completed-list');
         this.$deleteButton = this.$container.find('.delete');
+        console.log('cached');
       },
 
       bindEvents: function() {
@@ -29,7 +30,7 @@
 
       addNewToDo: function() {
           var newToDo = this.$input.val();
-          this.$list.prepend('<li><input id="complete-check" type="checkbox">' + newToDo + '</li>');
+          this.$list.prepend('<li><input id="complete-check" type="checkbox">' + newToDo + '<i class="fa fa-times delete"></i></li>');
           this.$input.val('');
       },
 
@@ -38,10 +39,11 @@
         var completedValue = $(this).parent().text();
         console.log(completedValue);
 
-        $('.completed-list').prepend('<li>'+ completedValue +'</li>');
+        $('.completed-list').prepend('<li>'+ completedValue +'<i class="fa fa-times delete"></i></li>');
       },
 
       deleteTask: function() {
+        console.log('delete');
         $(this).parent().remove();
       }
 
