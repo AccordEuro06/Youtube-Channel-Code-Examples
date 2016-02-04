@@ -83,14 +83,25 @@
         url: 'http://rest.learncode.academy/api/garrett/friends',
         data: friend,
         sucess: function(newFriend) {
-          if(newFriend.success == true){
+          if(newFriend.success === true){
             $friendsList.append('<li>' + 'Name: ' + ' ' + newFriend.name + 'Age: ' + ' ' + newFriend.age + '</li>');
           }
         }
       });
 
-    });
+    }); // end button click
 
+    // The start getting treehouse information
+
+    $.ajax({
+      type: 'GET',
+      url: 'https://teamtreehouse.com/garrettsanderson.json',
+      success: function(treeHouseDatas) {
+        $.each(treeHouseDatas, function(i, treeHouseData) {
+          $('#treehouse-info').append('<p>' + treeHouseData + '</p>');
+        });
+      }
+    });
 
 
 
