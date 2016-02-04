@@ -96,9 +96,12 @@
     $.ajax({
       type: 'GET',
       url: 'https://teamtreehouse.com/garrettsanderson.json',
+      dataType: 'json',
       success: function(treeHouseDatas) {
-        $.each(treeHouseDatas, function(i, treeHouseData) {
-          $('#treehouse-info').append('<p>' + treeHouseData + '</p>');
+        var data = JSON.stringify(treeHouseDatas)
+        $.each(treeHouseDatas.badges, function(i, tree) {
+          $('#treehouse-info').append('<img src="' + tree.icon_url + '">');
+          console.log(tree);
         });
       }
     });
