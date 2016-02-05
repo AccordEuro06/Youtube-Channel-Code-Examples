@@ -104,11 +104,11 @@
         var data = JSON.stringify(treeHouseDatas)
         $.each(treeHouseDatas.badges, function(i, tree) {
           $('#treehouse-info').append('<img class="badges" src="' + tree.icon_url + '">');
-
         });
+        $('.treehouse').append('<h2> Garrett has a total of ' + treeHouseDatas.points.total + ' points.</h2>')
       }
     });
-    
+
   }); // end document ready
 
 })();
